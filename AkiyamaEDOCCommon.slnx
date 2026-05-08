@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Akiyama.EDOCCommon/Akiyama.EDOCCommon.csproj" />
+  <Project Path="ObservatoryCore/ObservatoryFramework/ObservatoryFramework.csproj">
+    <Build Project="false" />
+  </Project>
+</Solution>

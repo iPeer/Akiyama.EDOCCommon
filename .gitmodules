@@ -1,0 +1,3 @@
+[submodule "ObservatoryCore"]
+	path = ObservatoryCore
+	url = https://github.com/Xjph/ObservatoryCore.git
