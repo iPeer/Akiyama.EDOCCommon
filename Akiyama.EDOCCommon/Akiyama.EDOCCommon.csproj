@@ -17,9 +17,19 @@
     <Version Condition=" '$(VersionInfo)' != '' ">$(VersionInfo)</Version>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
-  </ItemGroup>
+  <Choose>
+    <When Condition="'$(MSBuildProjectName)' == 'AkiyamaEDOCCommon'">
+    <ItemGroup>
+      <ProjectReference Include="..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
+    </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <ProjectReference Include="..\..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  
 
   <ItemGroup>
     <Compile Update="UI\PluginPanel.cs">
