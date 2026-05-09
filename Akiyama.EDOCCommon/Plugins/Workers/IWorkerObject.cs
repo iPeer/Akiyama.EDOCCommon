@@ -2,10 +2,10 @@
 
 namespace Akiyama.EDOCCommon.Plugins.Workers
 {
-    public interface IWorkerObject
+    public interface IWorkerObject : IObservatoryWorker
     {
         /// <inheritdoc cref="IObservatoryPlugin.Guid"/>
-        public static Guid Guid { get => new("90911ABE-B7DB-4150-0001-FFFFFFFFFFFF"); }
-    }
+        public new abstract static Guid Guid { get; }
 
+    }
 }

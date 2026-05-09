@@ -50,7 +50,7 @@ namespace Akiyama.EDOCCommon.Plugins.Context
         /// <summary>
         /// Used to log error information for this plugin. See also: <seealso cref="IObservatoryCore.GetPluginErrorLogger"/>.
         /// </summary>
-        public Action<Exception, string>? ErrorLogger;
+        public Action<Exception, string> ErrorLogger;
 
         private AkiyamaPlugin _base;
         /// <summary>
@@ -58,12 +58,11 @@ namespace Akiyama.EDOCCommon.Plugins.Context
         /// </summary>
         public AkiyamaPlugin BasePlugin { get => _base; set { _base = value; } }
 
-        /// <inheritdoc cref="IObservatoryCore.PluginStorageFolder"/>
-        public string PluginStorageFolder => _core.PluginStorageFolder;
         /// <summary>
-        /// [Alias of <see cref="PluginStorageFolder"/>]<br /><inheritdoc cref="PluginStorageFolder"/>
+        /// The data storage directory for this context.<br/>
+        /// <b>Note</b>: This value must be set at plugin initialisation. It cannot be set automatically by this library.
         /// </summary>
-        public string PluginDataPath => PluginStorageFolder;
+        public string PluginStorageFolder { get; set; }
 
         private readonly Dictionary<string, object> _genericProperties = [];
 

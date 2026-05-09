@@ -21,4 +21,10 @@
     <ProjectReference Include="..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="UI\PluginPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
