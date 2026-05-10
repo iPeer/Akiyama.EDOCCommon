@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <Choose>
-    <When Condition="'$(MSBuildProjectName)' == 'AkiyamaEDOCCommon'">
+    <When Condition="'$(MSBuildProjectName)' == 'Akiyama.EDOCCommon'">
     <ItemGroup>
       <ProjectReference Include="..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
     </ItemGroup>
