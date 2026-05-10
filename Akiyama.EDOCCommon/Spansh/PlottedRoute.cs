@@ -8,7 +8,7 @@ namespace Akiyama.EDOCCommon.Spansh
     {
 
 
-        public List<RouteEntry> Jumps = [];
+        public List<RouteEntry> Jumps { get; internal set; } = [];
 
         public static PlottedRoute FromFile(string path)
         {
