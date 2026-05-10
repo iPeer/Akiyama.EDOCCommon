@@ -13,7 +13,7 @@ namespace Akiyama.EDOCCommon.Plugins.Context
     }
 
     /// <summary>
-    /// Provides context information and poiters for this plugin
+    /// Provides context information and pointers for this plugin
     /// </summary>
     public class PluginContext
     {
