@@ -107,7 +107,7 @@ namespace Akiyama.EDOCCommon.Elite
         }
 
         /// <summary>
-        /// Takes a given star class and converts it into its respective colour designation. Eg: <c>"O" => "O (Blue-white)</c>"
+        /// Takes a given star class and converts it into its respective colour designation. Eg: <c>"O" => "O (Blue-white)"</c>
         /// </summary>
         /// <param name="starType">The star type to convert</param>
         /// <returns>A <see langword="string"/> of the provided star class' colour designation</returns>

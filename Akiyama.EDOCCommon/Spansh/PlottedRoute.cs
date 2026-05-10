@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
+using System.Text.Json;
 
 namespace Akiyama.EDOCCommon.Spansh
 {
@@ -28,7 +29,10 @@ namespace Akiyama.EDOCCommon.Spansh
             }
             else if (Path.GetExtension(path) == ".json")
             {
-
+                // Why is this so obnoxious compared to Csv. JSON is supposed to be EASY.
+                string _json = File.ReadAllText(path);
+                JsonDocument json = JsonDocument.Parse(_json);
+                route.Jumps = JsonSerializer.Deserialize<RouteEntry[]>(json.RootElement.GetProperty("result").GetProperty("jumps").ToString()).ToList();
             }
             else
             {
