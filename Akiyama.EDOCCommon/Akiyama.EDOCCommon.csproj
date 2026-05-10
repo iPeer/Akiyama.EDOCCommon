@@ -19,14 +19,14 @@
   </PropertyGroup>
 
   <Choose>
-    <When Condition="'$(MSBuildProjectName)' == 'Akiyama.EDOCCommon'">
+    <When Condition="Exists('..\..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj')">
     <ItemGroup>
-      <ProjectReference Include="..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
+      <ProjectReference Include="..\..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
     </ItemGroup>
     </When>
     <Otherwise>
       <ItemGroup>
-        <ProjectReference Include="..\..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
+        <ProjectReference Include="..\ObservatoryCore\ObservatoryFramework\ObservatoryFramework.csproj" />
       </ItemGroup>
     </Otherwise>
   </Choose>
