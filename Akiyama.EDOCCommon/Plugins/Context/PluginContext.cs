@@ -72,6 +72,36 @@ namespace Akiyama.EDOCCommon.Plugins.Context
         /// - When set to <see cref="PropertyOverwriteType.ERROR"/>, an exception will be raised when trying to update the value.<br />
         /// </summary>
         public PropertyOverwriteType GenericPropertyOverwriteType { get; set; } = PropertyOverwriteType.UPDATE;
+
+        /// <summary>
+        /// Provides the current state of Observatory's Log (Journal) Monitoring
+        /// </summary>
+        /// <remarks>
+        /// <b>Note</b>: This will not be set by the library on its own, instead it is required to be set by hooking the <seealso cref="IObservatoryWorker.LogMonitorStateChanged(LogMonitorStateChangedEventArgs)"/> method yourself and updating it<br />For information on how to implement this requirement, see the <seealso href="https://ipeer.github.io/Akiyama.EDOCCommon/api/Akiyama.EDOCCommon.Plugins.Context.PluginContext.html#Akiyama_EDOCCommon_Plugins_Context_PluginContext_LogMonitorState_examples">Akiyama.EDOCCommon documentation</seealso>.
+        /// </remarks>
+        /// <example>
+        /// <code>
+        /// public class MyWorker : IWorkerObject {
+        /// 
+        ///     public void Load(IObservatoryCore observatoryCore)
+        ///     {
+        ///         Context = new (observatoryCore, this);
+        ///     }
+        /// 
+        ///     ...
+        ///     
+        ///     public void LogMonitorStateChanged(LogMonitorStateChangedEventArgs args)
+        ///     {
+        ///         Context.LogMonitorState = args.NewState;
+        ///     }
+        /// 
+        ///     ...
+        /// 
+        /// }
+        /// </code>
+        /// </example>
+        public LogMonitorState LogMonitorState { get; set; }
+
         /// <summary>
         /// Instantiate an instance of this class with the specified <seealso cref="IObservatoryCore"/> instance.
         /// </summary>
