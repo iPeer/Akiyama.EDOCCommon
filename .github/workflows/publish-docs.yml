@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+    paths:
+      - Akiyama.EDOCCommon/**.cs
+      - docfx/**
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
